@@ -1,10 +1,4 @@
 if MergingChests.is_mod_active('WideChestsLogistic') then
-    MergingChests.disable_next_upgrade_of('logistic-container', 'logistic-chest-passive-provider')
-    MergingChests.disable_next_upgrade_of('logistic-container', 'logistic-chest-active-provider')
-    MergingChests.disable_next_upgrade_of('logistic-container', 'logistic-chest-buffer')
-    MergingChests.disable_next_upgrade_of('logistic-container', 'logistic-chest-requester')
-    MergingChests.disable_next_upgrade_of('logistic-container', 'logistic-chest-storage')
-
     MergingChests.create_mergeable_chest(
         {
             chest_name = 'nullius-small-supply-chest-1',
@@ -44,4 +38,10 @@ if MergingChests.is_mod_active('WideChestsLogistic') then
         },
         MergingChestsLogistic.requester_chest_segments
     )
+
+    MergingChests.set_next_upgrade_of('logistic-container', 'nullius-small-supply-chest-1', 'logistic-chest-passive-provider')
+    MergingChests.set_next_upgrade_of('logistic-container', 'nullius-small-dispatch-chest-1', 'logistic-chest-active-provider')
+    MergingChests.set_next_upgrade_of('logistic-container', 'nullius-small-storage-chest-1', 'logistic-chest-buffer')
+    MergingChests.set_next_upgrade_of('logistic-container', 'nullius-small-buffer-chest-1', 'logistic-chest-requester')
+    MergingChests.set_next_upgrade_of('logistic-container', 'nullius-small-demand-chest-1', 'logistic-chest-storage')
 end
